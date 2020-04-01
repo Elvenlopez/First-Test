@@ -14,8 +14,10 @@ time.sleep(4)
 driver.find_element_by_name("field-keywords").send_keys(Keys.ENTER)
 time.sleep(4)
 
-if driver.find_element_by_id("p_85-title"):
-    print("Prueba verificada correctamente")
+expected_text=driver.find_element_by_xpath("//span[@class='a-color-state a-text-bold']").text
+
+assert expected_text == '"Videojuegos"'
+
 
 time.sleep(4)
 
